@@ -1,3 +1,20 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
 body {
-    background-color: #eee;;
+    background-color: #eee;
 }
+
+#test-light {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@import './LightLamp.scss';
+@import './LightBox.scss';

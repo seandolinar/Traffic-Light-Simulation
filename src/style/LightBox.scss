@@ -1,0 +1,19 @@
+@import './_colors.scss';
+
+.light-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    padding: 3px 0;
+    background-color: $color-sign-gold;
+}
+
+.light-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    padding: 12px 0;
+    background-color: $color-sign-gold;
+}
