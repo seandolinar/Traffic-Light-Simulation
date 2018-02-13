@@ -9,6 +9,7 @@ module.exports = {
     devtool: 'eval',
     // entry: 'webpack-dev-server/client?http://localhost:8080',
     output: {
+      path: path.join(__dirname, 'dist'),
       filename: 'bundle.js'
     },
     resolve: {
@@ -50,3 +51,6 @@ module.exports = {
     ]
     
 }
+
+// have to change a bunch of things for the build and such.
+
