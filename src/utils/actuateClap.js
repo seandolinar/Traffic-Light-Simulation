@@ -44,7 +44,7 @@ class ActuateClap  {
         const clap = dataArray.reduce((p,c) => {
             return Math.max(p,c)
         }) 
-        clap > 250 && this.actuate()
+        clap > 230 && this.actuate()
         }
         audio()
     }
