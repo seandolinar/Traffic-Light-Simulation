@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import LightLamp from './LightLamp'
 import timer from '../utils/timer'
 import lightChange from '../utils/lightChange'
+import ActuateClap from '../utils/actuateClap'
 
 import {addTest} from '../redux/actions/actions'
 
@@ -12,20 +13,23 @@ class LightT3 extends React.Component {
         super(props)
         this.handleClick = this.handleClick.bind(this)
         this.state = { lightArray: {red: true, yellow: false, green: false} , operation: true }
-        console.log(props)
+        
         let i = 0
+
+        const timerObj = props.timer
+        // console.log(props)
 
         const t3Timer = async () => {
             let lightArray = this.state.lightArray
 
-            await timer() // defaults to 1000 ms
+            await timer(timerObj['RED']) // defaults to 1000 ms
             this.setState({lightArray: lightChange(lightArray, 'green')})
 
-            await timer(2000)
+            await timer(timerObj['GREEN'])
             this.setState({lightArray: lightChange(lightArray, 'yellow')})
 
 
-            await timer(this.props.time.yellow)
+            await timer(timerObj['YELLOW'])
             this.setState({lightArray: lightChange(lightArray, 'red')})
 
             // temporary so it doesn't always loop
@@ -38,19 +42,28 @@ class LightT3 extends React.Component {
         }
 
         t3Timer()
+
+        let act = new ActuateClap()
+        act.setActuate(() => { this.setState({lightArray: lightChange(this.state.lightArray, 'green')})  })
+        act.start()
+    }
+
+    componentWillReceiveProps(nextProps) {
+        // console.log('prop')
+        // console.log(nextProps)
     }
 
     handleClick () {
-        console.log('testing')
     }
 
     render () {
 
         const lightArray = this.state.lightArray
 
-        console.log(this.props)
 
-        return <div className="light-box t3" onClick={this.props.onClick}>
+        // console.log(this.props)
+
+        return <div className={'light-box t3 ' + this.props.direction} onClick={this.props.onClick}>
             <LightLamp color="red" lit={lightArray.red} />
             <LightLamp color="yellow" lit={lightArray.yellow} />
             <LightLamp color="green" lit={lightArray.green} />
@@ -71,13 +84,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 
 
-export default connect(
-    (state) => {
-        const test = state.working
-        return {
-            working: test
-    }},
-    mapDispatchToProps
-)(LightT3)
 
-// export default LightT3
+
+export default LightT3

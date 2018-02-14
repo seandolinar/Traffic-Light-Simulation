@@ -7,8 +7,11 @@
     width: 60px;
     padding: 3px 0;
     background-color: $color-sign-gold;
+
+
 }
 
+// bigger size
 .light-box {
     display: flex;
     flex-direction: column;
@@ -16,4 +19,9 @@
     width: 120px;
     padding: 12px 0;
     background-color: $color-sign-gold;
+    &.h {
+        flex-direction: row;
+        width: auto;
+        padding: 12px;
+    }
 }
