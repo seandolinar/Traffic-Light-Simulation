@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import LightLamp from './LightLamp'
 import timer from '../utils/timer'
-import lightChange from '../utils/lightChange'
+import { linearLightChange, specificLightChange } from '../utils/lightChange'
 import ActuateClap from '../utils/actuateClap'
 
 import {addTest} from '../redux/actions/actions'
@@ -23,14 +23,14 @@ class LightT3 extends React.Component {
             let lightArray = this.state.lightArray
 
             await timer(timerObj['RED']) // defaults to 1000 ms
-            this.setState({lightArray: lightChange(lightArray, 'green')})
+            this.setState({lightArray: linearLightChange(lightArray, 'green')})
 
             await timer(timerObj['GREEN'])
-            this.setState({lightArray: lightChange(lightArray, 'yellow')})
+            this.setState({lightArray: linearLightChange(lightArray, 'yellow')})
 
-
+            
             await timer(timerObj['YELLOW'])
-            this.setState({lightArray: lightChange(lightArray, 'red')})
+            this.setState({lightArray: linearLightChange(lightArray, 'red')})
 
             // temporary so it doesn't always loop
             i += 1
@@ -44,7 +44,7 @@ class LightT3 extends React.Component {
         t3Timer()
 
         let act = new ActuateClap()
-        act.setActuate(() => { this.setState({lightArray: lightChange(this.state.lightArray, 'green')})  })
+        act.setActuate(() => { this.setState({lightArray: specificLightChange(this.state.lightArray, 'green', 'red')})  })
         act.start()
     }
 
