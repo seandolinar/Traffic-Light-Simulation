@@ -10,7 +10,7 @@ import reducer from '../../redux/reducers/reducer'
 //
 const INITIAL_STORE = {
     direction: 'v',
-    timer: {'RED': 5000, 'YELLOW': 600, 'GREEN': 1800} //eventually build this out to populate up from the components?
+    timer: {'RED': 9000, 'YELLOW': 2500, 'GREEN': 3800} //eventually build this out to populate up from the components?
 }
 
 

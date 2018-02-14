@@ -19,7 +19,7 @@ class PageT3 extends React.Component {
 
     render () {
         return <div className="page t3">
-            <ControllerT3 />
+            {/* <ControllerT3 /> */}
             <LightT3 timer={this.props.timer}/>
         </div>
     }
