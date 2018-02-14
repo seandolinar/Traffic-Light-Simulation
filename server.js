@@ -3,7 +3,7 @@ const app = express()
 
 
 const path = require('path')
-
+const PORT = process.env.PORT || example.port
 
 app.use(express.static('simple-dist'))
 
@@ -15,4 +15,4 @@ app.get('*', (req, res) => {
     res.sendFile(dist)
 })
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.listen(PORT, () => console.log('Example app listening on port ' + PORT + '!'))
