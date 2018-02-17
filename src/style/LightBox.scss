@@ -16,7 +16,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    outline: 25px solid #222;
+    margin-top: 70px;
     width: 120px;
+    padding: 12px 0;
+    background-color: $color-sign-gold;
+    &.h {
+        flex-direction: row;
+        width: auto;
+        padding: 12px;
+    }
+}
+
+//biggest
+
+.light-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    outline: 35px solid #222;
+    margin-top: 100px;
+    width: 300px;
     padding: 12px 0;
     background-color: $color-sign-gold;
     &.h {

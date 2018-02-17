@@ -3,9 +3,15 @@ const app = express()
 
 
 const path = require('path')
-const PORT = process.env.PORT || example.port
+const PORT = process.env.PORT || 3000
 
-app.use(express.static('simple-dist'))
+// app.use(express.static('dist'))
+
+app.use(
+    express.static(
+        path.join(__dirname, '/dist')
+    )
+)
 
 // takes all routes and puts them to our index file
 app.get('*', (req, res) => {
