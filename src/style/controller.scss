@@ -1,0 +1,66 @@
+@import './_typeface.scss';
+
+input, button {
+    @include fontBase();
+    font-size: 16px;
+    border-radius: 0;
+    -webkit-appearance: none; 
+
+    padding: 15px;
+
+    // turns off the spiner box on numbers
+    &[type=number]::-webkit-inner-spin-button,
+    &[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+}
+
+ 
+input {
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+.controller {
+
+    input {
+        
+        width: 100px;
+        padding: 10px;
+    }
+    label {
+        margin-right: 5px;
+        width: 20px;
+        display: inline-block;
+    }
+}
+
+
+.controller-t3 {
+    display: flex;
+    flex-direction: row;
+
+    border: 1px solid #222;
+    padding: 20px;
+
+    &-display,
+    &-timing {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 15px;
+
+        button {
+            margin: 7px 0;
+        }
+    }
+    &-timing {
+        &:before {
+            content: 'Timing (ms)';
+            display: block;
+            text-align: center;
+        }
+    }
+}

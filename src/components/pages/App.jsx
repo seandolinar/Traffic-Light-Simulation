@@ -6,16 +6,12 @@ import { Provider } from 'react-redux'
 
 import configureStore from '../../redux/store/store'
 import reducer from '../../redux/reducers/reducer'
+import middleware from '../../redux/middleware/middleware'
 
-//
-const INITIAL_STORE = {
-    direction: 'v',
-    timer: {'RED': 9000, 'YELLOW': 2500, 'GREEN': 3800} //eventually build this out to populate up from the components?
-}
+import INITIAL_STORE from '../../redux/store/initialStore'
 
-
+// sets our initial store
 const store = configureStore(reducer(INITIAL_STORE, {}))
-
 
 
 class App extends React.Component {
@@ -24,10 +20,7 @@ class App extends React.Component {
         super(props)
     }
 
- 
-
-    render () {
-        
+    render () {      
         return <PageT3 />
     }
 }

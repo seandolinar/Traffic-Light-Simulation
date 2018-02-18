@@ -2,6 +2,7 @@
 
 .light-lamp {
     display: inline-block;
+    position: relative;
     border-radius: 50%;
     height: 50px;
     width: 50px;
@@ -23,6 +24,19 @@
         border-radius: 50%;
     }
 
+    &.on:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        border-radius: 50%;
+        // background-color: #fff;
+        height: 0;
+        width: 0; 
+        top: 25px;
+        left: 25px;
+        box-shadow: 0px 0px 20px 6px rgba(255,255,200,.8)
+    }
+
     &.red {
         background-color: $color-red;
     }
@@ -37,7 +51,7 @@
     }
 }
 
-.light-lamp {
+.size-med .light-lamp {
     display: inline-block;
     border-radius: 50%;
     height: 100px;
@@ -59,6 +73,7 @@
         border-top: 8px solid $color-sign-gold;
         box-shadow: 0px -2px 3px -1px rgba(0,0,0,.5);
         border-radius: 50%;
+        z-index: 1;
     }
 
     &:not(.off):after {
@@ -90,7 +105,7 @@
 
 
 //biggest size
-.light-lamp {
+.size-lg .light-lamp {
     display: inline-block;
     border-radius: 50%;
     height: 200px;
@@ -109,11 +124,55 @@
         border-top: 16px solid $color-sign-gold;
         box-shadow: 0px -3px 4px -2px rgba(0,0,0,.5);
         border-radius: 50%;
+        z-index: 1;
     }
 
     &:not(.off):after {
         top: 100px;
         left: 100px;
         box-shadow: 0px 0px 100px 30px rgba(255,255,200,.7)
+    }
+}
+
+.arrow {
+    color: #000;
+    transition: color 300ms;
+}
+
+.light-lamp {
+    .arrow {
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #000;
+        border-radius: 50%;
+
+        color: #000;
+        transition: color 300ms;
+
+        width: 100px;
+        height: 100px;
+
+        left: 0;
+        top: 0;
+
+        .material-icons {
+            font-size: 66px;
+            margin-right: 5px;
+            font-weight: 600;
+        }
+    }
+
+    &.on .arrow {
+        color: $color-green;
+    }
+}
+
+// 0px 0px 40px 10px rgba(255, 255, 200, 0.8)
+.black .light-lamp {
+    &:before {
+        border-color: #222;
     }
 }

@@ -4,14 +4,11 @@ import { connect } from 'react-redux'
 import ControllerT3 from '../ControllerT3'
 import LightT3 from '../LightT3'
 
-import {addTest} from '../../redux/actions/actions'
-
 import '../../utils/actuateClap'
 
 class PageT3 extends React.Component {
     constructor (props) {
-        super(props)
-        
+        super(props) 
     }
 
     handleClick () {
@@ -19,8 +16,8 @@ class PageT3 extends React.Component {
 
     render () {
         return <div className="page t3">
-            {/* <ControllerT3 /> */}
-            <LightT3 timer={this.props.timer}/>
+            <LightT3 timer={this.props.timer} direction={this.props.direction} signalColor={this.props.signalColor} lightArray={this.props.lightArray}/>
+            <ControllerT3 />
         </div>
     }
 }
@@ -32,7 +29,6 @@ class PageT3 extends React.Component {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
       onClick: () => {
-        // dispatch(addTest(1))
       }
     }
   }
@@ -40,14 +36,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 export default connect(
     (state) => {
-        // const test = state.counter.working
-        // console.log(state)
         return {
-            // working: test,
-            // second: state.counterSecond.second
-            timer: state.timer
+            timer: state.timer,
+            direction: state.direction,
+            signalColor: state.signalColor,
+            lightArray: state.lightArray
     }},
     mapDispatchToProps
 )(PageT3)
 
-// export default LightT3

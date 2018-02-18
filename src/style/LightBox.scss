@@ -7,17 +7,16 @@
     width: 60px;
     padding: 3px 0;
     background-color: $color-sign-gold;
-
-
 }
 
 // bigger size
-.light-box {
+.light-box.size-med {
     display: flex;
     flex-direction: column;
     align-items: center;
     outline: 25px solid #222;
-    margin-top: 70px;
+    margin: 50px 0;
+
     width: 120px;
     padding: 12px 0;
     background-color: $color-sign-gold;
@@ -29,13 +28,13 @@
 }
 
 //biggest
-
-.light-box {
+.light-box.size-lg {
     display: flex;
     flex-direction: column;
     align-items: center;
     outline: 35px solid #222;
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     width: 300px;
     padding: 12px 0;
     background-color: $color-sign-gold;
@@ -44,4 +43,9 @@
         width: auto;
         padding: 12px;
     }
+}
+
+.light-box.black {
+    outline: 35px solid $color-sign-gold;
+    background-color: #222;
 }

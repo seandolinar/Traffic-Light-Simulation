@@ -1,3 +1,5 @@
+@import './_typeface.scss';
+
 html {
     box-sizing: border-box;
   }
@@ -18,3 +20,4 @@ body {
 
 @import './LightLamp.scss';
 @import './LightBox.scss';
+@import './controller.scss';
