@@ -49,3 +49,17 @@
     outline: 35px solid $color-sign-gold;
     background-color: #222;
 }
+
+
+.t5 {
+    .bottom-yellow-green {
+        display: flex;
+        flex-direction: row;
+
+        .left-arrow,
+        .right-full {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

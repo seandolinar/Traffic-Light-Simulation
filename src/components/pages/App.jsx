@@ -1,6 +1,8 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 import PageT3 from './PageT3'
+import PageT5 from './PageT5'
+
 import { Provider } from 'react-redux'
 
 
@@ -21,7 +23,7 @@ class App extends React.Component {
     }
 
     render () {      
-        return <PageT3 />
+        return <PageT5 />
     }
 }
 

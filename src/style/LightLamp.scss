@@ -159,15 +159,29 @@
         top: 0;
 
         .material-icons {
-            font-size: 66px;
+            font-size: 70px;
             margin-right: 5px;
             font-weight: 600;
         }
     }
 
-    &.on .arrow {
+    &.on.red .arrow {
+        color: $color-red;
+    }
+    &.on.yellow .arrow {
+        color: $color-yellow;
+    }
+    &.on.green .arrow {
         color: $color-green;
     }
+       
+        // .yellow {
+        //     color: $color-yellow;
+        // }
+        // .green {
+        //     color: $color-green;
+        // }
+    // }
 }
 
 // 0px 0px 40px 10px rgba(255, 255, 200, 0.8)
